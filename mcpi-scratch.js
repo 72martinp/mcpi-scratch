@@ -147,8 +147,8 @@
     };
 
 	// get one coord (x, y, or z) for playerPos
-    ext.getBlock1 = function(x, y, z, posType, callback) {
-        var cmdUrl = "http://localhost:4715/getBlock1/" + x + "/" + y + "/" + z + "/" + posType;
+    ext.getHeight = function(x, z, callback) {
+        var cmdUrl = "http://localhost:4715/getHeight/" + x + "/" + z;
         $.ajax({
             type: "GET",
             url: cmdUrl,
@@ -215,7 +215,7 @@
             setCircle: "set circle center x1:%n z1:%n radius r:%n at height y:%n to type %n data %n",
             getPlayerPos:"get player pos %m.pos",
             getBlock:"get block pos x:%n y:%n z:%n %m.blockPos",
-			getBlock1:"get block1 pos x:%n y:%n z:%n %m.blockPos", 			
+			getHeight:"get Height pos x:%n z:%n", 			
             whenBlockHit: "when blockHit",
             message:"message"
         },
@@ -267,7 +267,7 @@
             [" ", translate.setCircle,"setCircle", 0, 0, 0, 0, 0, 1, -1],
             ["R", translate.getPlayerPos,"getPlayerPos", 'x'],
             ["R", translate.getBlock,"getBlock", 0, 0, 0],
-			["R", translate.getBlock1,"getBlock1", 0, 0, 0],
+			["R", translate.getHeight,"getHeight", 0, 0],
             ["h", translate.whenBlockHit,'whenBlockHit'],
         ],
         menus: {
