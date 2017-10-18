@@ -215,7 +215,7 @@
             setCircle: "set circle center x1:%n z1:%n radius r:%n at height y:%n to type %n data %n",
             getPlayerPos:"get player pos %m.pos",
             getBlock:"get block pos x:%n y:%n z:%n %m.blockPos",
-            getBlock:1"get block1 pos x:%n y:%n z:%n %m.blockPos", 			
+            getBlock1:"get block1 pos x:%n y:%n z:%n %m.blockPos", 			
             whenBlockHit: "when blockHit",
             message:"message"
         },
