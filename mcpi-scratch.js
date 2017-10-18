@@ -146,7 +146,7 @@
         }); 
     };
 
-	// get height for pos (x, z) 
+    // get height for pos (x, z) 
     ext.getHeight = function(x, z, callback) {
         var cmdUrl = "http://localhost:4715/getHeight/" + x + "/" + z;
         $.ajax({
@@ -163,7 +163,7 @@
             }
         }); 
     };
-	
+    
     function checkMC_Events() {
         var cmdUrl = "http://localhost:4715/pollBlockHit/";
         $.ajax({
@@ -215,7 +215,7 @@
             setCircle: "set circle center x1:%n z1:%n radius r:%n at height y:%n to type %n data %n",
             getPlayerPos:"get player pos %m.pos",
             getBlock:"get block pos x:%n y:%n z:%n %m.blockPos",
-			getHeight:"get height pos x:%n z:%n", 			
+            getHeight:"get height pos x:%n z:%n",           
             whenBlockHit: "when blockHit",
             message:"message"
         },
