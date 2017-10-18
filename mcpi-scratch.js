@@ -146,7 +146,7 @@
         }); 
     };
 
-	// get one coord (x, y, or z) for playerPos
+	// get height for pos (x, z) 
     ext.getHeight = function(x, z, callback) {
         var cmdUrl = "http://localhost:4715/getHeight/" + x + "/" + z;
         $.ajax({
@@ -154,11 +154,11 @@
             url: cmdUrl,
             //dataType: "jsonp", // hack for the not origin problem - replace with CORS based solution
             success: function(data) {
-                console.log("getPlayerPos success ", data.trim());
+                console.log("getHeight success ", data.trim());
                 callback(data.trim());
             },
             error: function(jqxhr, textStatus, error) { // have to change this coz jasonp parse error
-                console.log("Error getPlayerPos: ", error);
+                console.log("Error getHeight: ", error);
                 callback(null);
             }
         }); 
