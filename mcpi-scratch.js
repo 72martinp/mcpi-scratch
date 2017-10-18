@@ -148,7 +148,7 @@
 
 	// get one coord (x, y, or z) for playerPos
     ext.getBlock1 = function(x, y, z, posType, callback) {
-        var cmdUrl = "http://localhost:4715/getBlock/" + x + "/" + y + "/" + z + "/" + posType;
+        var cmdUrl = "http://localhost:4715/getBlock1/" + x + "/" + y + "/" + z + "/" + posType;
         $.ajax({
             type: "GET",
             url: cmdUrl,
