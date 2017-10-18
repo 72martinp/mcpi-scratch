@@ -267,7 +267,7 @@
             [" ", translate.setCircle,"setCircle", 0, 0, 0, 0, 0, 1, -1],
             ["R", translate.getPlayerPos,"getPlayerPos", 'x'],
             ["R", translate.getBlock,"getBlock", 0, 0, 0],
-			["R", translate.getHeight,"getHeight", 0, 0],
+            ["R", translate.getHeight,"getHeight", 0, 0],
             ["h", translate.whenBlockHit,'whenBlockHit'],
         ],
         menus: {
