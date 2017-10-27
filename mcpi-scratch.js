@@ -185,6 +185,21 @@
     };
 
 
+	ext.createTurtle = function() {
+        var cmdUrl = "http://localhost:4715/createTurtle/";
+        $.ajax({
+            type: "GET",
+            url: cmdUrl,
+            //dataType: "jsonp", // hack for the not origin problem - replace with CORS based solution
+            success: function(data) {
+                console.log("createTurtle success");
+            },
+            error: function(jqxhr, textStatus, error) { // have to change this coz jasonp parse error
+                console.log("Error createTurtle: ", error);
+            }
+        }); // nb: GET is including the javascript callback. Do I need this for one-way call?
+    };
+	
     ext.setTurtlePos = function(x, y, z) {
         var cmdUrl = "http://localhost:4715/setTurtlePos/" + x + "/" + y + "/" + z;
         $.ajax({
