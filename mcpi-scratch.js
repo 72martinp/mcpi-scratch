@@ -255,6 +255,22 @@
             }
         }); 
     };
+	
+	
+	ext.turtleGoTo = function(x, y, z) {
+        var cmdUrl = "http://localhost:4715/turtleGoTo/" + x + "/" + y + "/" + z;
+        $.ajax({
+            type: "GET",
+            url: cmdUrl,
+            //dataType: "jsonp", // hack for the not origin problem - replace with CORS based solution
+            success: function(data) {
+                console.log("turtleGoTo success");
+            },
+            error: function(jqxhr, textStatus, error) { // have to change this coz jasonp parse error
+                console.log("Error turtleGoTo: ", error);
+            }
+        }); // nb: GET is including the javascript callback. Do I need this for one-way call?
+    };
   
     ext.whenBlockHit = function(str) {
         if (!blockHits)
