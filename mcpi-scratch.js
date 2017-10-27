@@ -186,7 +186,7 @@
 
 
     ext.setTurtlePos = function(x, y, z) {
-        var cmdUrl = "http://localhost:4715/setBlock/" + x + "/" + y + "/" + z;
+        var cmdUrl = "http://localhost:4715/setTurtlePos/" + x + "/" + y + "/" + z;
         $.ajax({
             type: "GET",
             url: cmdUrl,
@@ -250,7 +250,7 @@
             getPlayerPos:"get player pos %m.pos",
             getBlock:"get block pos x:%n y:%n z:%n",
             getHeight:"get height pos x:%n z:%n",
-            setTurtlePos: "set turtle pos x:%n y:%n z:%n %m.blockPos",			
+            setTurtlePos: "set turtle pos x:%n y:%n z:%n",			
             turtleForward:"turtleForward %n steps",          
             whenBlockHit: "when blockHit",
             message:"message"
