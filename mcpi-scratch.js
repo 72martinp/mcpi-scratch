@@ -201,6 +201,25 @@
         }); // nb: GET is including the javascript callback. Do I need this for one-way call?
     };
     
+    
+    // turtleStartPos (x, y, or z) for playerPos
+    ext.turtleStartPos = function(x, y, z) {
+        var cmdUrl = "http://localhost:4715/turtleForward/" + x + "/" + y + "/" + z;
+        $.ajax({
+            type: "GET",
+            url: cmdUrl,
+            //dataType: "jsonp", // hack for the not origin problem - replace with CORS based solution
+            success: function(data) {
+                console.log("turtleForward success ", data.trim());
+                callback(data.trim());
+            },
+            error: function(jqxhr, textStatus, error) { // have to change this coz jasonp parse error
+                console.log("Error turtleForward: ", error);
+                callback(null);
+            }
+        }); 
+    };
+    
     // turtleForward (x, y, or z) for playerPos
     ext.turtleForward = function(step) {
         var cmdUrl = "http://localhost:4715/turtleForward/" + step;
@@ -269,7 +288,8 @@
             getPlayerPos:"get player pos %m.pos",
             getBlock:"get block pos x:%n y:%n z:%n",
             getHeight:"get height pos x:%n z:%n",
-            setTurtlePos: "set turtle pos x:%n y:%n z:%n",          
+            setTurtlePos: "set turtle pos x:%n y:%n z:%n",
+            turtleStartPos: "turtle start pos x:%n y:%n z:%n",          
             turtleForward:"turtle Forward %n steps",      
             turtleLeft:"turtle turn left %n angle",         
             whenBlockHit: "when blockHit",
@@ -323,6 +343,7 @@
             [" ", translate.setCircle,"setCircle", 0, 0, 0, 0, 0, 1, -1],
             [" ", translate.setTurtlePos,"set turtle pos", 0, 0, 0],
             [" ", translate.turtleForward,"turtleForward", 0],
+            [" ", translate.turtleStartPos,"turtleSTartPos", 0, 0, 0],
             [" ", translate.turtleLeft,"turtleLeft", 90],
             ["R", translate.getPlayerPos,"getPlayerPos", 'x'],
             ["R", translate.getBlock,"getBlock", 0, 0, 0],
