@@ -185,21 +185,7 @@
     };
 
 
-    ext.createTurtle = function() {
-        var cmdUrl = "http://localhost:4715/createTurtle/";
-        $.ajax({
-            type: "GET",
-            url: cmdUrl,
-            //dataType: "jsonp", // hack for the not origin problem - replace with CORS based solution
-            success: function(data) {
-                console.log("createTurtle success");
-            },
-            error: function(jqxhr, textStatus, error) { // have to change this coz jasonp parse error
-                console.log("Error createTurtle: ", error);
-            }
-        }); // nb: GET is including the javascript callback. Do I need this for one-way call?
-    };
-    
+   
     ext.setTurtlePos = function(x, y, z) {
         var cmdUrl = "http://localhost:4715/setTurtlePos/" + x + "/" + y + "/" + z;
         $.ajax({
@@ -283,7 +269,6 @@
             getPlayerPos:"get player pos %m.pos",
             getBlock:"get block pos x:%n y:%n z:%n",
             getHeight:"get height pos x:%n z:%n",
-            createTurtle: "create turtle on player pos",
             setTurtlePos: "set turtle pos x:%n y:%n z:%n",          
             turtleForward:"turtle Forward %n steps",      
             turtleLeft:"turtle turn left %n angle",         
@@ -336,7 +321,6 @@
             [" ", translate.setBlocks,"setBlocks", 0, 0, 0, 0, 0, 0, 1, -1],
             [" ", translate.setLine,"setLine", 0, 0, 0, 0, 0, 1, -1],
             [" ", translate.setCircle,"setCircle", 0, 0, 0, 0, 0, 1, -1],
-            [" ", translate.createTurtle,"create turtle on player pos"],
             [" ", translate.setTurtlePos,"set turtle pos", 0, 0, 0],
             [" ", translate.turtleForward,"turtleForward", 0],
             [" ", translate.turtleLeft,"turtleLeft", 90],
