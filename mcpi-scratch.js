@@ -184,6 +184,25 @@
         }); 
     };
 
+	
+	// turtleForward (x, y, or z) for playerPos
+    ext.turtleForward = function(step) {
+        var cmdUrl = "http://localhost:4715/turtleForward/" + step;
+        $.ajax({
+            type: "GET",
+            url: cmdUrl,
+            //dataType: "jsonp", // hack for the not origin problem - replace with CORS based solution
+            success: function(data) {
+                console.log("turtleForward success ", data.trim());
+                callback(data.trim());
+            },
+            error: function(jqxhr, textStatus, error) { // have to change this coz jasonp parse error
+                console.log("Error turtleForward: ", error);
+                callback(null);
+            }
+        }); 
+    };
+	
     ext.whenBlockHit = function(str) {
         if (!blockHits)
             return;
