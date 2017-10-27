@@ -255,9 +255,9 @@
             }
         }); 
     };
-	
-	
-	ext.turtleGoTo = function(x, y, z) {
+    
+    
+    ext.turtleGoTo = function(x, y, z) {
         var cmdUrl = "http://localhost:4715/turtleGoTo/" + x + "/" + y + "/" + z;
         $.ajax({
             type: "GET",
@@ -304,7 +304,7 @@
             getPlayerPos:"get player pos %m.pos",
             getBlock:"get block pos x:%n y:%n z:%n",
             getHeight:"get height pos x:%n z:%n",
-			turtleGoTo: "turtle pos x:%n y:%n z:%n"
+            turtleGoTo: "turtle pos x:%n y:%n z:%n"
             setTurtlePos: "set turtle pos x:%n y:%n z:%n",
             turtleStartPos: "turtle start pos x:%n y:%n z:%n",          
             turtleForward:"turtle Forward %n steps",      
@@ -358,7 +358,7 @@
             [" ", translate.setBlocks,"setBlocks", 0, 0, 0, 0, 0, 0, 1, -1],
             [" ", translate.setLine,"setLine", 0, 0, 0, 0, 0, 1, -1],
             [" ", translate.setCircle,"setCircle", 0, 0, 0, 0, 0, 1, -1],
-			[" ", translate.turtleGoTo, "turtleGoTo", 0, 0, 0],
+            [" ", translate.turtleGoTo, "turtleGoTo", 0, 0, 0],
             [" ", translate.setTurtlePos,"set turtle pos", 0, 0, 0],
             [" ", translate.turtleForward,"turtleForward", 0],
             [" ", translate.turtleStartPos,"turtleSTartPos", 0, 0, 0],
