@@ -274,7 +274,7 @@
             getBlock:"get block pos x:%n y:%n z:%n",
             getHeight:"get height pos x:%n z:%n",
             turtlePos: "turtle pos x:%n y:%n z:%n",         
-            turtleForward:"turtle Forward %n steps",      
+            turtleForward:"turtle forward %n steps",      
             turtleLeft:"turtle turn left %n angle",         
             whenBlockHit: "when blockHit",
             message:"message"
