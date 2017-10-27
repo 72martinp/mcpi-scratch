@@ -204,7 +204,7 @@
     
     // turtleStartPos (x, y, or z) for playerPos
     ext.turtleStartPos = function(x, y, z) {
-        var cmdUrl = "http://localhost:4715/turtleForward/" + x + "/" + y + "/" + z;
+        var cmdUrl = "http://localhost:4715/turtleStartPos/" + x + "/" + y + "/" + z;
         $.ajax({
             type: "GET",
             url: cmdUrl,
