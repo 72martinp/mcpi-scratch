@@ -325,7 +325,7 @@
             [" ", translate.setBlocks,"setBlocks", 0, 0, 0, 0, 0, 0, 1, -1],
             [" ", translate.setLine,"setLine", 0, 0, 0, 0, 0, 1, -1],
             [" ", translate.setCircle,"setCircle", 0, 0, 0, 0, 0, 1, -1],
-            [" ", translate.turtlePos,"turtle pos", 0, 0, 0],
+            [" ", translate.turtlePos,"turtlePos", 0, 0, 0],
             [" ", translate.turtleForward,"turtleForward", 0],
             [" ", translate.turtleLeft,"turtleLeft", 90],
             ["R", translate.getPlayerPos,"getPlayerPos", 'x'],
