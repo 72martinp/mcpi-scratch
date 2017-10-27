@@ -184,8 +184,8 @@
         }); 
     };
 
-	
-	// turtleForward (x, y, or z) for playerPos
+    
+    // turtleForward (x, y, or z) for playerPos
     ext.turtleForward = function(step) {
         var cmdUrl = "http://localhost:4715/turtleForward/" + step;
         $.ajax({
@@ -202,7 +202,7 @@
             }
         }); 
     };
-	
+    
     ext.whenBlockHit = function(str) {
         if (!blockHits)
             return;
@@ -235,7 +235,7 @@
             getPlayerPos:"get player pos %m.pos",
             getBlock:"get block pos x:%n y:%n z:%n %m.blockPos",
             getHeight:"get height pos x:%n z:%n",   
-            turtleForward:"move %n steps",			
+            turtleForward:"move %n steps",          
             whenBlockHit: "when blockHit",
             message:"message"
         },
@@ -285,7 +285,7 @@
             [" ", translate.setBlocks,"setBlocks", 0, 0, 0, 0, 0, 0, 1, -1],
             [" ", translate.setLine,"setLine", 0, 0, 0, 0, 0, 1, -1],
             [" ", translate.setCircle,"setCircle", 0, 0, 0, 0, 0, 1, -1],
-			[" ", translate.turtleForward,"turtleForward", 0],
+            [" ", translate.turtleForward,"turtleForward", 0],
             ["R", translate.getPlayerPos,"getPlayerPos", 'x'],
             ["R", translate.getBlock,"getBlock", 0, 0, 0],
             ["R", translate.getHeight,"getHeight", 0, 0],
