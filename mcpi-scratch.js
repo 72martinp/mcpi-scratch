@@ -339,7 +339,7 @@
             [" ", translate.createTurtle,"create turtle on player pos"],
             [" ", translate.setTurtlePos,"set turtle pos", 0, 0, 0],
             [" ", translate.turtleForward,"turtleForward", 0],
-            [" ", translate.turtleLeft,"turtleLeft", 90]
+            [" ", translate.turtleLeft,"turtleLeft", 90],
             ["R", translate.getPlayerPos,"getPlayerPos", 'x'],
             ["R", translate.getBlock,"getBlock", 0, 0, 0],
             ["R", translate.getHeight,"getHeight", 0, 0],
