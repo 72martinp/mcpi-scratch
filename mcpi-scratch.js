@@ -274,7 +274,7 @@
             getBlock:"get block pos x:%n y:%n z:%n",
             getHeight:"get height pos x:%n z:%n",
             turtlePos: "turtle pos x:%n y:%n z:%n",         
-            turtleForward:"turtle Forward %n steps",      
+            turtleForward:"turtle forward %n steps",      
             turtleLeft:"turtle turn left %n angle",         
             whenBlockHit: "when blockHit",
             message:"message"
@@ -325,7 +325,7 @@
             [" ", translate.setBlocks,"setBlocks", 0, 0, 0, 0, 0, 0, 1, -1],
             [" ", translate.setLine,"setLine", 0, 0, 0, 0, 0, 1, -1],
             [" ", translate.setCircle,"setCircle", 0, 0, 0, 0, 0, 1, -1],
-            [" ", translate.turtlePos,"turtle pos", 0, 0, 0],
+            [" ", translate.turtlePos,"turtlePos", 0, 0, 0],
             [" ", translate.turtleForward,"turtleForward", 0],
             [" ", translate.turtleLeft,"turtleLeft", 90],
             ["R", translate.getPlayerPos,"getPlayerPos", 'x'],
