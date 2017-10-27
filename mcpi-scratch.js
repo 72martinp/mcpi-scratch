@@ -235,7 +235,7 @@
             getPlayerPos:"get player pos %m.pos",
             getBlock:"get block pos x:%n y:%n z:%n %m.blockPos",
             getHeight:"get height pos x:%n z:%n",   
-            turtleForward:"move %n steps",          
+            turtleForward:"turtleForward %n steps",          
             whenBlockHit: "when blockHit",
             message:"message"
         },
