@@ -146,7 +146,7 @@
         }); 
     };
 
-	// get height for pos (x, z) 
+    // get height for pos (x, z) 
     ext.getHeight = function(x, z, callback) {
         var cmdUrl = "http://localhost:4715/getHeight/" + x + "/" + z;
         $.ajax({
@@ -163,7 +163,7 @@
             }
         }); 
     };
-	
+    
     function checkMC_Events() {
         var cmdUrl = "http://localhost:4715/pollBlockHit/";
         $.ajax({
@@ -184,6 +184,25 @@
         }); 
     };
 
+	
+	// turtleForward (x, y, or z) for playerPos
+    ext.turtleForward = function(step) {
+        var cmdUrl = "http://localhost:4715/turtleForward/" + step;
+        $.ajax({
+            type: "GET",
+            url: cmdUrl,
+            //dataType: "jsonp", // hack for the not origin problem - replace with CORS based solution
+            success: function(data) {
+                console.log("turtleForward success ", data.trim());
+                callback(data.trim());
+            },
+            error: function(jqxhr, textStatus, error) { // have to change this coz jasonp parse error
+                console.log("Error turtleForward: ", error);
+                callback(null);
+            }
+        }); 
+    };
+	
     ext.whenBlockHit = function(str) {
         if (!blockHits)
             return;
@@ -215,7 +234,7 @@
             setCircle: "set circle center x1:%n z1:%n radius r:%n at height y:%n to type %n data %n",
             getPlayerPos:"get player pos %m.pos",
             getBlock:"get block pos x:%n y:%n z:%n %m.blockPos",
-			getHeight:"get height pos x:%n z:%n", 			
+            getHeight:"get height pos x:%n z:%n",           
             whenBlockHit: "when blockHit",
             message:"message"
         },
