@@ -185,7 +185,7 @@
     };
 
 
-   
+    // setTurtlePos (x, y, z) 
     ext.setTurtlePos = function(x, y, z) {
         var cmdUrl = "http://localhost:4715/setTurtlePos/" + x + "/" + y + "/" + z;
         $.ajax({
