@@ -232,7 +232,25 @@
             }
         }); 
     };
-    
+  
+    // turtleLeft (x, y, or z) for playerPos
+    ext.turtleLeft = function(angle) {
+        var cmdUrl = "http://localhost:4715/turtleLeft/" + angle;
+        $.ajax({
+            type: "GET",
+            url: cmdUrl,
+            //dataType: "jsonp", // hack for the not origin problem - replace with CORS based solution
+            success: function(data) {
+                console.log("turtleLeft success ", data.trim());
+                callback(data.trim());
+            },
+            error: function(jqxhr, textStatus, error) { // have to change this coz jasonp parse error
+                console.log("Error turtleLeft: ", error);
+                callback(null);
+            }
+        }); 
+    };
+  
     ext.whenBlockHit = function(str) {
         if (!blockHits)
             return;
@@ -267,7 +285,8 @@
             getHeight:"get height pos x:%n z:%n",
 			createTurtle: "create turtle on player pos",
             setTurtlePos: "set turtle pos x:%n y:%n z:%n",			
-            turtleForward:"turtleForward %n steps",          
+            turtleForward:"turtle Forward %n steps",      
+            turtleLeft:"turtle turn left %n angle",			
             whenBlockHit: "when blockHit",
             message:"message"
         },
@@ -320,6 +339,7 @@
 			[" ", translate.createTurtle,"create turtle on player pos"],
 		    [" ", translate.setTurtlePos,"set turtle pos", 0, 0, 0],
             [" ", translate.turtleForward,"turtleForward", 0],
+			[" ", translate.turtleLeft,"turtleLeft", 90]
             ["R", translate.getPlayerPos,"getPlayerPos", 'x'],
             ["R", translate.getBlock,"getBlock", 0, 0, 0],
             ["R", translate.getHeight,"getHeight", 0, 0],
